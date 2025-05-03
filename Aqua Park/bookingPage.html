@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aqua Empire - Booking</title>
+    <link rel="stylesheet" href="./CSS/bookingStyle.css">
+    <link rel="stylesheet" href="./CSS/all.min.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <h1 class="enLang">Aqua Empire</h1>
+            <h1 class="arLang">أكوا إمباير</h1>
+        </div>
+        <ul>
+            <span id="langSwitcher">
+                <button id="langSwitchAR" onclick="btnSwitch('arabic')">عربي</button>
+                <button id="langSwitchEN" onclick="btnSwitch('english')">English</button>
+            </span>
+            <li>
+                <a href="./index.html" class="enLang">Home</a>
+                <a href="./index.html" class="arLang">الصفحة الرئيسية</a>
+            </li>
+            <li>
+                <a href="./services.html" class="enLang">Services</a>
+                <a href="./services.html" class="arLang">الخدمات</a>
+            </li>
+            <li>
+                <a href="./About.html" class="enLang">About Us</a>
+                <a href="./About.html" class="arLang">من نحن</a>
+            </li>
+            <li>
+                <a href="bookingPage.html" class="enLang">Book Here <i class="fa-solid fa-suitcase-rolling" style="color: #007bff;"></i></a>
+                <a href="bookingPage.html" class="arLang">أحجز هنا <i class="fa-solid fa-suitcase-rolling" style="color: #007bff;"></i></a>
+            </li>
+        </ul>
+        <div class="hamburger">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+    </nav>
+    <div class="menubar">
+        <ul>
+            <li>
+                <a href="./index.html" class="enLang">Home</a>
+                <a href="./index.html" class="arLang">الصفحة الرئيسية</a>
+            </li>
+            <li>
+                <a href="./services.html" class="enLang">Services</a>
+                <a href="./services.html" class="arLang">الخدمات</a>
+            </li>
+            <li>
+                <a href="./About.html" class="enLang">About Us</a>
+                <a href="./About.html" class="arLang">من نحن</a>
+            </li>
+            <li>
+                <a href="bookingPage.html" class="enLang">Book Here <i class="fa-solid fa-suitcase-rolling" style="color: #007bff;"></i></a>
+                <a href="bookingPage.html" class="arLang">أحجز هنا <i class="fa-solid fa-suitcase-rolling" style="color: #007bff;"></i></a>
+            </li>
+        </ul>
+    </div>
+
+    <header id="booking-form">
+
+        <form class="form">
+            <h1 class="enLang">Book Here <i class="fa-solid fa-suitcase-rolling" style="color: #007bff;"></i></h1>
+            <h1 class="arLang">احجز هنا <i class="fa-solid fa-suitcase-rolling" style="color: #007bff;"></i></h1>
+
+            <input type="text" placeholder="Enter Your Fullname." id="username" class="enLang" name="username" required>
+            <input type="text" placeholder="أدخل اسمك الكامل" id="username" class="arLang" name="username" required>
+            <input type="tel" placeholder="Enter Your Phone Number." id="phoneNumber" class="enLang" name="phoneNumber" required>
+            <input type="tel" placeholder="أدخل رقم هاتفك" id="phoneNumber" class="arLang" name="phoneNumber" required>
+            <input type="email" placeholder="Enter Your Email." id="email" class="enLang" name="email" required>
+            <input type="email" placeholder="أدخل بريدك الإلكتروني" id="email" class="arLang" name="email" required>
+            <input type="date" id="arrivalDate" class="enLang" name="arrivalDate">
+            <input type="date" id="arrivalDate" class="arLang" name="arrivalDate">
+            <section id="members">
+                <label for="members-amount" id="label">How Many Members Are There?</label>
+                <select name="membersAmount" id="members-amount" onchange="displayMembersPricing()" required>
+                    <option value="" id="placeholder" disabled selected>Amount of Members</option>
+                    <option value="1" id="1member">1 Member</option>
+                    <option value="2" id="2members">2 Members</option>
+                    <option value="3" id="3members">3 Members</option>
+                    <option value="4" id="4members">4 Members</option>
+                    <option value="5" id="5members">5 Members</option>
+                    <option value="6" id="6members">6 Members</option>
+                    <option value="7" id="7members">7 Members</option>
+                    <option value="8" id="8members">8 Members</option>
+                    <option value="9" id="9members">9 Members</option>
+                    <option value="10" id="10members">10 Members</option>
+                </select>
+            </section>
+            
+            <section id="members-container"></section>
+            <div id="mealChecker">
+                <input type="checkbox" id="meal" onclick="includeMeal()">
+                <label for="meal" class="enLang">Include Meal? (+10)</label>
+                <label for="meal" class="arLang">هل يشمل الوجبة؟ (+۱۰)</label>
+            </div>
+
+            <button class="booking-btn" id="bookingBtn">Book For --$</button>
+        </form>
+
+    </header>
+    
+    <footer>
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <div class="copyright enLang">
+            All Rights Reserved &copy; 2025 - Aqua Empire
+        </div>
+        <div class="copyright arLang">
+            جميع الحقوق محفوظة © ۲۰۲٥ - أكوا إمباير
+        </div>
+    </footer>
+    
+</body>
+<script src="./JS/bookingScript.js"></script>
+<script src="./JS/all.min.js"></script>
+<script src="./JS/langSwitchScript.js"></script>
+</html>
